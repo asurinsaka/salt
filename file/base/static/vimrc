@@ -1,0 +1,18 @@
+let mapleader=","             " leader is comma
+" for true colors
+"if has('nvim') || has('termguicolors')
+"  set termguicolors
+"endif
+set t_Co=256                  " set 256 bit colors
+
+set noswapfile
+" turn off bell in vim
+set visualbell
+set t_vb=
+set encoding=utf-8
+" spaces/tabs
+set tabstop=2                 " number of visual spaces per TAB
+set softtabstop=2             " number of spaces when editing
+set expandtab                 " turns tabs into spaces
+set shiftwidth=2              " indent two spaces"
+set autoindent                " copy indentation from previous line"
