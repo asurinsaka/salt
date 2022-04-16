@@ -1,5 +1,6 @@
 base:
   '*':
+    - default.vim
     - default.packages
     - default.auth_keys
     - default.nfs-mount
@@ -26,3 +27,6 @@ base:
 
   'sony':
     - nfs.server
+
+  'not xps':
+    - .multi-user
