@@ -2,5 +2,13 @@ base:
   '*':
   - default
   - hostsfile
-  - glusterfs
   - nfs
+
+  'os:Ubuntu':
+  - match: grain
+  - glusterfs-local
+
+  'os:Manjaro':
+  - match: grain
+  - glusterfs-xps
+

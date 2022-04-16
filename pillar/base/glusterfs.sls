@@ -8,6 +8,7 @@ glusterfs:
     - u460
     - h430
     - 220s
+    - o790
     volumes:
        glance:
          storage: /srv/glusterfs/glance
@@ -20,13 +21,6 @@ glusterfs:
          - u460:/srv/glusterfs/glance
          - h430:/srv/glusterfs/glance
          - 220s:/srv/glusterfs/glance
+         - o790:/srv/glusterfs/glance
     enabled: true
   
-  client:
-    volumes:
-      glance:
-        path: /var/lib/glance/images
-        server: 192.168.2.207
-        user: asurin
-        group: asurin
-    enabled: true
