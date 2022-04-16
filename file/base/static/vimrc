@@ -16,3 +16,153 @@ set softtabstop=2             " number of spaces when editing
 set expandtab                 " turns tabs into spaces
 set shiftwidth=2              " indent two spaces"
 set autoindent                " copy indentation from previous line"
+
+" ui config
+set number
+set showcmd                   " show last command in bottom bar
+set cursorline                " highlight current line
+set cursorcolumn              " highlight current column
+set wildmenu                  " visual auto-complete for command menu
+set showmatch                 " highlight matching [{()}]
+set lazyredraw                " redraw only when needed
+set pastetoggle=<F2>          " toggle set paste/nopaste
+set mouse=a                   " set mouse support in vim
+
+" undo
+set undofile                  " set vim to save undo history
+set undodir=~/.vim/vimundo    " dir to store undo file
+set history=1000              " set vim command history
+set undolevels=1000           " max number of undo
+
+" searching
+set incsearch                 " search as characters are entered
+set hlsearch                  " highlight matches
+set ignorecase                " ignore case while searching
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" folding
+set foldenable                " enable folding
+set foldlevelstart=10         " open most folds by default
+set foldnestmax=10            " nested fold max
+" space open/closes folds
+nnoremap <space> za           " space open/closes folds
+set foldmethod=indent         " fold based on indent level (for Python, etc.)
+filetype indent on            " load filetype-specific indent files
+syntax enable                 " enable syntax processing
+
+" movement
+" move vertically by visual line, not real line
+nnoremap j gj
+nnoremap k gk
+nnoremap J 10j
+nnoremap K 10k
+nnoremap L 5l
+nnoremap H 5h
+vnoremap j gj
+vnoremap k gk
+vnoremap J 10j
+vnoremap K 10k
+vnoremap L 5l
+vnoremap H 5h
+
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" shortcuts
+nnoremap ; :
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-c> :bprevious<CR>
+inoremap jk <esc>
+
+call plug#begin('~/.vim/plugged') " initialize vim-plug
+Plug 'vim-airline/vim-airline'
+Plug 'challenger-deep-theme/vim', { 'as' : 'challenger-deep' } " challenger_deep colorscheme
+"Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dzeban/vim-log-syntax'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mbbill/undotree'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/syntastic'
+Plug 'altercation/vim-colors-solarized'
+Plug 'majutsushi/tagbar'
+Plug 'Chiel92/vim-autoformat'
+Plug 'rhysd/vim-clang-format'
+Plug 'rust-lang/rust.vim'
+call plug#end()
+
+colorscheme challenger_deep
+
+" plugin setings
+
+" undotree toggle panel
+nnoremap <leader>u :UndotreeToggle<cr>
+
+" rainbow parentheses
+" always on
+au VimEnter * RainbowParentheses
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+" nerd commenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines are commented or not
+let g:NERDToggleCheckAllLines = 1
+
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+" ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+
+" nerdtree
+map <C-t> :NERDTreeToggle<CR>
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" ctags
+set tags=tags
+
+" for AutoFormat
+noremap <F3> :Autoformat<CR>
+"au BufWrite * :Autoformat " format on save
+let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
+let g:formatters_python = ['autopep8']
+" for logging
+let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+" auto-pairs
+" let g:AutoPairs = {'(':')', '[':']', '{':'}'}
