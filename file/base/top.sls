@@ -8,7 +8,6 @@ base:
     - hostsfile
     - vim
     - vim.salt
-    - vim.pyflakes
     - vim.nerdtree
     - nfs.client
     - nfs.mount
@@ -23,10 +22,16 @@ base:
 
 
   'o780':
+    - default.nfs-share-location
     - nfs.server
 
   'sony':
+    - default.nfs-share-location
     - nfs.server
 
   'not xps':
     - .multi-user
+
+  'o755':
+    - default.nfs-share-location
+    - nfs.server
