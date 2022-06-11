@@ -14,11 +14,6 @@ nfs:
       location: "o780:/srv/nfs"
       persist: true
       mkmnt: true
-    sony:
-      mountpoint: "/mnt/sony"
-      location: "sony:/srv/nfs"
-      persist: true
-      mkmnt: true
     o755:
       mountpoint: "/mnt/o755"
       location: "o755:/srv/nfs"

@@ -25,10 +25,6 @@ base:
     - default.nfs-share-location
     - nfs.server
 
-  'sony':
-    - default.nfs-share-location
-    - nfs.server
-
   'not xps':
     - .multi-user
 

@@ -7,3 +7,4 @@ install_packages:
       - git
       - zsh
       - vim
+      - smartmontools
