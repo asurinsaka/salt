@@ -9,10 +9,11 @@ glusterfs:
     # - h430
     - 220s
     - o790m
+    - k55a
     volumes:
        glance:
          storage: /srv/glusterfs/glance
-         replica: 2
+         replica: 3
          bricks:
          - xps:/srv/glusterfs/glance
          - k54l:/srv/glusterfs/glance
@@ -28,7 +29,7 @@ glusterfs:
     volumes:
       glance:
         path: /var/lib/glance/images
-        server: 192.168.2.207
+        server: localhost
         user: asurin
         group: asurin
     enabled: true

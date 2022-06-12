@@ -3,6 +3,7 @@ base:
     - default.vim
     - default.packages
     - default.auth_keys
+    #    - default.git-clone
     - default.nfs-mount
     - docker
     - hostsfile
@@ -14,7 +15,7 @@ base:
 
   'os:Ubuntu':
     - match: grain
-    #    - ubuntu.docker
+    - ubuntu.docker
     - glusterfs.server    # does not work with manjaro
     - glusterfs.client
     - ubuntu.ca_cert
@@ -31,3 +32,6 @@ base:
   'o755':
     - default.nfs-share-location
     - nfs.server
+
+  'k55a':
+    - .media
