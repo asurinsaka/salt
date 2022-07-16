@@ -16,11 +16,13 @@ base:
   'os:Ubuntu':
     - match: grain
     - ubuntu.docker
-    - glusterfs.server    # does not work with manjaro
-    - glusterfs.client
     - ubuntu.ca_cert
     - ubuntu.packages
 
+  'os:Debian':
+    - match: grain
+    - sudoers
+    - ubuntu.docker
 
   'o780':
     - default.nfs-share-location
