@@ -8,3 +8,6 @@ install_packages:
       - zsh
       - vim
       - smartmontools
+      - tmux
+      - sqlite3
+      - glances

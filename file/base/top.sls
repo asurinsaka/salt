@@ -24,16 +24,12 @@ base:
     - sudoers
     - ubuntu.docker
 
-  'o780':
-    - default.nfs-share-location
-    - nfs.server
+#  'o780':
+#    - default.nfs-share-location
+#    - nfs.server
 
   'not xps':
     - .multi-user
-
-  'o755':
-    - default.nfs-share-location
-    - nfs.server
 
   'k55a':
     - .media

@@ -15,3 +15,9 @@ mpb15:
     - user: asurin
     - source: salt://static/ssh_keys/mpb15.id_rsa.pub
     - config: '%h/.ssh/authorized_keys'
+
+imac::
+  ssh_auth.present:
+    - user: asurin
+    - source: salt://static/ssh_keys/imac.id_rsa.pub
+    - config: '%h/.ssh/authorized_keys'
