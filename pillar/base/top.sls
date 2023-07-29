@@ -16,3 +16,5 @@ base:
 #  - match: grain
 #  - glusterfs-xps
 
+  'o9020':
+  - samba

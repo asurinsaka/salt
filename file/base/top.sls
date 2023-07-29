@@ -3,7 +3,7 @@ base:
     - default.vim
     - default.packages
     - default.auth_keys
-    #    - default.git-clone
+    - default.git-clone
     - default.nfs-mount
     - docker
     - hostsfile
@@ -18,15 +18,15 @@ base:
     - ubuntu.docker
     - ubuntu.ca_cert
     - ubuntu.packages
+    - pyenv
 
   'os:Debian':
     - match: grain
     - sudoers
     - ubuntu.docker
 
-#  'o780':
-#    - default.nfs-share-location
-#    - nfs.server
+  'o9020':
+    - nfs.server
 
   'not xps':
     - .multi-user

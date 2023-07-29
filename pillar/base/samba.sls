@@ -3,16 +3,16 @@ samba:
   conf:
     render:
       ## list the sections your smb.conf should include
-      section_order: ['global', 'homes', 'printers', 'media', 'user1share']
+      section_order: ['global', 'homes', 'media']
       ## include sections from default.yaml (yes) or ONLY those listed above (no)
       include_unordered_sections: no
 
     sections:
       global:
         workgroup: lab
-        netbios name: o780
+        netbios name: o9020
         bind interfaces only: yes
-        interfaces: lo enp0s25
+        interfaces: lo eno1
 
 
       media:
@@ -20,4 +20,8 @@ samba:
         browseable: yes
         writable: yes
         public: yes
-
+    
+    users:
+      asurin:
+        password:
+          passwd: $1$0ztZ7BaJ$4HoHWHW6p4qJoTIVyCXrv0

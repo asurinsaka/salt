@@ -5,7 +5,9 @@ nfs:
     exports:
       /srv/nfs:
         192.168.2.0/24(rw,sync,no_subtree_check)
+        192.168.1.0/24(rw,sync,no_subtree_check)
         127.0.0.0/24(rw,sync,no_subtree_check)
+        192.168.194.0/24(rw,sync,no_subtree_check)
 
 
 #  mount:
