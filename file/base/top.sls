@@ -5,6 +5,7 @@ base:
     - default.auth_keys
     - default.git-clone
     - default.nfs-mount
+    - default.user-asurin
     - docker
     - hostsfile
     - vim
@@ -28,7 +29,7 @@ base:
   'o9020':
     - nfs.server
 
-  'not xps':
+  'not latitude':
     - .multi-user
 
   'k55a':

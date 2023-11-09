@@ -19,9 +19,9 @@
 
 # Clone the repository.
 # git@github.com:zsh-users/zsh-syntax-highlighting.git:
-zsh_syntax_highlighting:
-  git.latest:
-    - name: https://github.com/zsh-users/zsh-syntax-highlighting.git
-    - target: /home/asurin/.oh-my-zsh/plugins/zsh-syntax-highlighting
-    - branch: master
-    - user: asurin
+  # zsh_syntax_highlighting:
+  #   git.latest:
+  #     - name: https://github.com/zsh-users/zsh-syntax-highlighting.git
+  #     - target: /home/asurin/.oh-my-zsh/plugins/zsh-syntax-highlighting
+  #     - branch: master
+  #     - user: asurin

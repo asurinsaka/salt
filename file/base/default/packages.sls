@@ -11,3 +11,7 @@ install_packages:
       - tmux
       - sqlite3
       - glances
+      - openssh-server
+      - zsh
+      - nload
+
